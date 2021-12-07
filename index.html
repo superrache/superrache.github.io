@@ -36,14 +36,14 @@
             }
 
             #dock-container {
-                position: fixed;
+                position: absolute;
                 z-index: 1001;
                 bottom: 0;
                 text-align: center;
-                right: 10%;
-                left: 10%;
-                width: 80%;
-                background: linear-gradient(to right, #34343420, #1d1d1b30);
+                right: 15%;
+                left: 15%;
+                width: 70%;
+                background: linear-gradient(to right, #ffffff20, #ffffff30);
                 border-radius: 10px 10px 0 0;
             }
             #dock-container li {
@@ -111,10 +111,12 @@
             }
 
             .leaflet-control-container a {
+                font-size: 1em;
                 color: black;
             }
 
             .leaflet-control-attribution {
+                font-size: 1em;
                 color: black;
             }
 
@@ -164,13 +166,16 @@
 
 var map = L.map('map').setView([46.589, 1], 6)
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map)
 
 L.marker([48.8544, 2.3465]).addTo(map)
     .bindPopup('<a href="https://wherearethebikes.herokuapp.com/?network=velib" target="_blank">Where are the bikes?</a><p>Visualisation de données de la disponibilité des stations de vélo en libre-service')
     //.openPopup()
+
+L.marker([47.51631, -1.80292]).addTo(map)
+    .bindPopup('<a href="https://ride-generator.herokuapp.com" target="_blank">ride-generator</a><p>Générateur de balade')
 
 creuse.forEach(function(d) {
     var a = d[0]
