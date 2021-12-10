@@ -189,6 +189,8 @@ var polygon = L.polygon(creuse, {color: 'red'}).addTo(map)
 L.geoJSON(tramGeojson, {color: 'purple', weight: 8}).addTo(map)
     .bindPopup('<div class="popup"><a href="https://latitude-cartagene.com/" target="_blank">Latitude-Cartagène</a><p>Agence de cartographie print et web où j\'ai eu le plaisir de travailler pendant 7 ans</div>')
 
+fetch('https://dept-quiz.herokuapp.com/stat?feature=superrache.github.io')
+
 </script>
 	</body>
 </html>
